@@ -1,0 +1,19 @@
+Given an array of size n-1 such that it only contains distinct integers in the range of 1 to n. Return the missing element.
+// User function template for C++
+
+class Solution{
+  public:
+    int missingNumber(vector<int>& array, int n) {
+        // Your code goes here
+        long long sum=0;
+        for(int i=0;i<n-1;i++)
+        {
+            sum = sum+1LL*array[i];
+        }
+        long long  original_sum=(n*(n+1))/2;
+        int missingNumber =(int)(original_sum - sum);
+        return missingNumber;
+        
+        
+    }
+};
